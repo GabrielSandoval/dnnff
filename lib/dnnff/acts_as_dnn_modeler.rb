@@ -1,5 +1,3 @@
-require 'matrix'
-
 module Dnnff
   module ActsAsDnnModeler
     extend ActiveSupport::Concern
@@ -7,11 +5,13 @@ module Dnnff
     class_methods do
       cattr_accessor :architecture
       cattr_accessor :layers
+      cattr_accessor :output_classes
       cattr_accessor :w
       cattr_accessor :b
 
       def acts_as_dnn_modeler(options = {})
         @architecture = options[:architecture]
+        @output_classes = options[:output_classes]
         @layers = []
         @w = load_weights
         @b = load_biases
@@ -42,7 +42,8 @@ module Dnnff
 
         output_layer = @layers.last.flatten
         prediction = output_layer.flatten.each_with_index.max[1]
-        return {output_layer: output_layer, prediction: prediction}
+
+        return {output_layer: output_layer, prediction: prediction, humanized_prediction: @output_classes[prediction]}
       end
 
       def relu(layer)

@@ -7,7 +7,7 @@ class TradingBot < ApplicationRecord
     [256, 'relu'],
     [128, 'relu'],
     [3, 'softmax']
-  ]
+  ], output_classes: ['buy', 'sell', 'hold']
 
   self.abstract_class = true
 end

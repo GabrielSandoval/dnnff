@@ -29,7 +29,7 @@ class TradingBot < ApplicationRecord
     [256, 'relu'],
     [128, 'relu'],
     [3, 'softmax']
-  ]
+  ], output_classes: ['buy', 'sell', 'hold']
 
   self.abstract_class = true
 end
@@ -49,7 +49,7 @@ end
 4. Use the `#predict` method.
 ```
 TradingBot.predict([[1,2,3,4,5]])
- => {:output_layer=>[0.6602635194126928, 0.33973568315229913, 7.974350082273843e-07], :prediction=>0}
+ => {:output_layer=>[0.6602635194126928, 0.33973568315229913, 7.974350082273843e-07], :prediction=>0, humanized_prediction=>"buy"}
 ```
 
 ## Installation
