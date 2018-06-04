@@ -5,7 +5,7 @@ You can now do AI predictions on your Rails app!
 
 See live Rails application using DNNFF: [DNNFF Rails Example](http://dnnff.herokuapp.com/)
 
-Source code: https://github.com/GabrielSandoval/dnnff_rails_example
+Example source code: https://github.com/GabrielSandoval/dnnff_rails_example
 
 ## Usage
 1. Create an AI model and include the `Dnnff::ActsAsDnnModeler` module.
