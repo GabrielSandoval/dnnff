@@ -3,7 +3,9 @@ DNNFF is a Rails Plugin that allows you to load weights and biases of trained AI
 
 You can now do AI predictions on your Rails app!
 
-See example Rails application: [DNNFF Rails Example](https://github.com/GabrielSandoval/dnnff_rails_example)
+See live Rails application using DNNFF: [DNNFF Rails Example](http://dnnff.herokuapp.com/)
+
+Source code: https://github.com/GabrielSandoval/dnnff_rails_example
 
 ## Usage
 1. Create an AI model and include the `Dnnff::ActsAsDnnModeler` module.
